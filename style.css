@@ -1371,7 +1371,7 @@ footer .footer-below p {
 	line-height: 26.4px;
 }
 
-.forum p {
+.forum a{
 	font-size: 30px;
 	color: #fff;
 }
