@@ -1371,7 +1371,7 @@ footer .footer-below p {
 	line-height: 26.4px;
 }
 
-.forum a{
+.forum a.text-center{
 	font-size: 30px;
 	color: #000;
 	font-family: 'Montserrat', sans-serif;
