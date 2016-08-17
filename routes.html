@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ <!-- add the link into the head section of the page -->
+<script src="float-panel.js"></script>
+<!--Add it anywhere on the page -->
+<div id="backtop">&#9650;</div>
+    <title>ChiRoutes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Proprietary a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>	
+<!-- font files -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<!-- /font files -->
+<!-- css files -->
+<link href="bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="update.css" rel="stylesheet" type="text/css" media="all" />
+<link href="photoGallery.css" rel="stylesheet" type="text/css" media="all" />
+<link href="progressbar.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Calligraffitti" />
+<!-- /css files -->
+<!-- js files -->
+<script src="bootstrap.min.js"></script>
+<script src="bgfader.js"></script>
+<script src="javascriptstarter.js"></script>
+<script src="jquery.min.js"></script>
+<script src="main.js"></script>
+<script src="photoGallery.js"></script>
+<script src="progressbar.js"></script>
+<script src="SmoothScroll.min.js"></script>
+<script src="myScript.js"></script>
+<!-- /js files -->	
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<!-- navigation -->
+<div class="navbar-wrapper">
+    <div class="container">
+		<nav class="navbar navbar-inverse navbar-static-top cl-effect-21">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<!--<a class="navbar-brand" href="aboutchi.html">
+					<h1><span><img src="logo.png" alt="logo"></span></h1>
+					</a>-->
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+					<li><a href="routes.html">Routing</a></li> 
+						<li><a href="info.html">Map</a></li> <!--Home-->
+						<li><a href="index.html">About</a></li>
+						<li><a href="safetyinfo.html">Safety Info</a></li> <!--Services-->
+						<li><a href="hoodcomments.html">Neighborhood Comments</a></li><!--Our Skills-->
+						<!--<li><a href="#gallery">Gallery</a></li>-->
+						<!--<li><a href="#news">News</a></li> -->
+						<li><a href="contact.html">Contact</a></li> 
+						<br>
+						<img src="legend.jpg" style= "width:200px; height:200px;" align="right">
+					</ul>
+				</div>
+			</div>
+        </nav>
+    </div>
+</div>
+<!-- /navigation -->
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+      .controls {
+        margin-top: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      #origin-input,
+      #destination-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 200px;
+      }
+
+      #origin-input:focus,
+      #destination-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #mode-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        margin-left: 12px;
+        padding: 5px 11px 0px 11px;
+      }
+
+      #mode-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+    </style>
+  </head>
+  <body>
+    <input id="origin-input" class="controls" type="text"
+        placeholder="Enter an origin location">
+
+    <input id="destination-input" class="controls" type="text"
+        placeholder="Enter a destination location">
+
+    <div id="mode-selector" class="controls">
+      <input type="radio" name="type" id="changemode-walking" checked="checked">
+      <label for="changemode-walking">Walking</label>
+
+      <input type="radio" name="type" id="changemode-transit">
+      <label for="changemode-transit">Transit</label>
+
+      <input type="radio" name="type" id="changemode-driving">
+      <label for="changemode-driving">Driving</label>
+    </div>
+
+    <div id="map"></div>
+
+    <script>
+	
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      function initMap() {
+        var origin_place_id = null;
+        var destination_place_id = null;
+        var travel_mode = 'WALKING';
+        var map = new google.maps.Map(document.getElementById('map'), {
+          mapTypeControl: false,
+          center: {lat: 41.881832, lng: -87.623177},
+          zoom: 13
+        });
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        directionsDisplay.setMap(map);
+
+        var origin_input = document.getElementById('origin-input');
+        var destination_input = document.getElementById('destination-input');
+        var modes = document.getElementById('mode-selector');
+
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(origin_input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(destination_input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(modes);
+
+        var origin_autocomplete = new google.maps.places.Autocomplete(origin_input);
+        origin_autocomplete.bindTo('bounds', map);
+        var destination_autocomplete =
+            new google.maps.places.Autocomplete(destination_input);
+        destination_autocomplete.bindTo('bounds', map);
+
+		
+		
+		
+        // Sets a listener on a radio button to change the filter type on Places
+        // Autocomplete.
+        function setupClickListener(id, mode) {
+          var radioButton = document.getElementById(id);
+          radioButton.addEventListener('click', function() {
+            travel_mode = mode;
+          });
+        }
+        setupClickListener('changemode-walking', 'WALKING');
+        setupClickListener('changemode-transit', 'TRANSIT');
+        setupClickListener('changemode-driving', 'DRIVING');
+
+        function expandViewportToFitPlace(map, place) {
+          if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+          } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);
+          }
+        }
+
+        origin_autocomplete.addListener('place_changed', function() {
+          var place = origin_autocomplete.getPlace();
+          if (!place.geometry) {
+            window.alert("Autocomplete's returned place contains no geometry");
+            return;
+          }
+          expandViewportToFitPlace(map, place);
+
+          // If the place has a geometry, store its place ID and route if we have
+          // the other place ID
+          origin_place_id = place.place_id;
+          route(origin_place_id, destination_place_id, travel_mode,
+                directionsService, directionsDisplay);
+        });
+
+        destination_autocomplete.addListener('place_changed', function() {
+          var place = destination_autocomplete.getPlace();
+          if (!place.geometry) {
+            window.alert("Autocomplete's returned place contains no geometry");
+            return;
+          }
+          expandViewportToFitPlace(map, place);
+
+          // If the place has a geometry, store its place ID and route if we have
+          // the other place ID
+          destination_place_id = place.place_id;
+          route(origin_place_id, destination_place_id, travel_mode,
+                directionsService, directionsDisplay);
+        });
+
+        function route(origin_place_id, destination_place_id, travel_mode,
+                       directionsService, directionsDisplay) {
+          if (!origin_place_id || !destination_place_id) {
+            return;
+          }
+          directionsService.route({
+            origin: {'placeId': origin_place_id},
+            destination: {'placeId': destination_place_id},
+            travelMode: travel_mode
+          }, function(response, status) {
+            if (status === 'OK') {
+              directionsDisplay.setDirections(response);
+            } else {
+              window.alert('Directions request failed due to ' + status);
+            }
+          });
+        }
+		 var as1 = {lat:41, lng: -87};
+		var as2= {lat:41.811697721, lng: -87.675214316};
+		var as3={lat:41.874865643,lng: -87.720427367};
+		var as4={lat:41.895942308,lng: -87.746866179};
+		var as5={lat:41.704276039,lng: -87.619797922};
+		var as6={lat:41.663292071,lng: -87.63814672};
+		var as7={lat:41.659137482,lng: -87.608875108};
+		var as8={lat:41.80800325,lng: -87.713068922};
+		var as9={lat:41.762719954,lng: -87.624846791};
+		var as10={lat:41.705267858,lng: -87.629323117};
+		var as11={lat:41.864186063,lng: -87.70437984};
+		var as12={lat: 41.779384141,lng: -87.731328199};
+		var as13={lat: 41.878202613,lng: -87.725583999};
+		var as14={lat: 41.835947057,lng: -87.734045986};
+		var as15={lat: 41.906507267,lng: -87.76702211};
+		var as16={lat: 41.831073285,lng: -87.620211441};
+		var as17={lat: 41.87732994,lng: -87.705183648};
+		var as18={lat: 41.806856848,lng: -87.604315633};
+		var as19={lat: 41.732794335,lng: -87.662981316};
+		var as20={lat: 41.924868492,lng: -87.732905875};
+		var as21={lat: 41.735897814,lng: -87.63844147 };
+		var as22={lat: 41.810753148,lng: -87.748135411};
+		var as23={lat: 41.798741929,lng: -87.62580711};
+		var as24={lat: 41.746140855,lng: -87.652406156};
+		var as25={lat: 41.780323147,lng: -87.673925674};
+		var as26={lat: 41.7016233,lng: -87.629307943};
+		var as27={lat: 41.701621543,lng: -87.629469087 };
+		var as28={lat: 41.915841247,lng: -87.728963636};
+		var as29={lat: 41.794583892,lng: -87.629307346};
+		var as30={lat: 41.892521409,lng: -87.748171938};
+		var as31={lat: 41.715308056,lng: -87.567339775};
+		var as32={lat: 41.772597143,lng: -87.703618384};
+		var as33={lat: 41.783757424,lng: -87.683764609};
+		var as34={lat: 41.76797856,lng: -87.655408413};
+		var as36={lat: 41.828111292, lng: -87.675226018};
+		var as37={lat: 41.866986335, lng: -87.657245417};
+		var as38={lat: 41.779247618,lng: -87.684085098};
+		var as39={lat: 41.880047495,lng: -87.757686318 };
+		var as40={lat: 41.78647607, lng: -87.689446287 };
+		var as41={lat: 41.764707098,lng: -87.624890909};
+		var as42={lat: 41.849833976,lng: -87.716595942};
+		var as43={lat: 41.690162801,lng: -87.65204489};
+		var as44={lat: 41.69189982,lng: -87.642367883};
+		var as45={lat: 41.876736953, lng: -87.748800643};
+		var as46={lat: 41.851407157,lng: -87.733835632};
+		var as47={lat: 41.765747716,lng: -87.573854926 };
+		var as48={lat: 41.781353265,lng: -87.63508375};
+		var as49={lat: 41.858568011,lng: -87.710319284};
+		var as50={lat: 41.960818082,lng: -87.739296905};
+		var as51={lat: 41.816180724,lng: -87.616777947};
+		var as52={lat: 41.822421977,lng: -87.606854 };
+		var as53={lat: 41.729756954,lng: -87.65559428};
+		var as54={lat: 41.692041778, lng: -87.665923635};
+		var as55={lat: 41.830045077, lng: -87.66555614};
+		var as56={lat: 41.64923464,lng:-87.546890198 };
+		var as35={lat: 41.678680502,lng:-87.645595206};
+		var as57={lat: 41.834586423,lng:-87.632325774};
+		var as58={lat: 41.854314622,lng:-87.721075101};
+		var as59={lat: 41.751530836,lng:-87.581986028};
+		var as60={lat: 41.772000438,lng:-87.644584606 };
+		var as61={lat: 41.772947511,lng:-87.636894268};
+		var as62={lat: 41.861719259,lng:-87.720163799};
+		var as63={lat: 41.799864776,lng:-87.706190146};
+		var as64={lat: 41.743859235,lng:-87.716859965};
+		var as65={lat: 41.874441638,lng:-87.720681099};
+		var as67={lat: 41.67695123,lng:-87.64187989 };
+		var as68={lat: 41.698063204,lng:-87.622506696};
+		var as69={lat: 41.845288055,lng:-87.708715851 };
+		var as70={lat: 41.671515401,lng:-87.646575551};
+		var as71={ lat: 41.740537776,lng:-87.710091106};
+		var as72={lat: 41.65139339,lng:-87.544734368};
+		var as73={lat: 41.948145561,lng:-87.798520993 };
+		var as74={lat: 41.737203218,lng:-87.64973064};
+		var as75={lat: 41.944067844,lng:-87.827634087};
+		var as76={ lat: 41.779020554,lng:-87.699944221};
+		var as77={lat: 41.721918366,lng:-87.585137009};
+		var as78={lat: 41.879784857,lng:-87.723806409};
+		var as79={lat: 41.770969165,lng:-87.586268228};
+		var as80={lat: 41.963447455,lng:-87.739908582};
+		var as81={ lat: 41.770802391,lng:-87.732313911};
+		var as82={lat: 41.943266721,lng:-87.815973669};
+		var as83={lat: 41.88774484,lng:-87.76590246};
+		var as84={ lat: 41.87779885,lng:-87.701117867};
+		var as85={ lat: 41.784513502,lng:-87.63218583};
+		var as86={lat: 41.881854367,lng:-87.724388981 };
+		var as87={lat: 41.812465818,lng:-87.748182182};
+		var as88={ lat: 41.823281396,lng:-87.671885469 };
+		var as89={ lat: 41.751457646,lng:-87.552892516 };
+		var as90={ lat: 41.704113802,lng:-87.628193145};
+		var as91={ lat: 41.841720082,lng:-87.714721478};
+		var as92={lat: 41.744938196,lng:-87.660212994 };
+		var as93={ lat: 41.894925002,lng:-87.756234153};
+		var as94={lat: 41.806842366,lng:-87.660405333 };
+		var as95={lat: 41.756379321,lng:-87.590743855};
+		var as66={lat: 41.685927014,lng:-87.642179183 };
+		
+		var kid1= {lat: 41.68744,lng: -87.6715};
+ var kid2= {lat: 41.8032, lng: -87.722};
+ var kid3= {lat: 41.8032,lng: -87.722};
+ var kid4= { lat: 41.92102,lng: -87.6987};
+ var kid5= { lat: 41.87537,lng: -87.6276};
+ 
+  var sexo1= {lat: 41.92939,lng: -87.7079};
+  var sexo2= {lat: 41.90966,lng: -87.7427};
+  var sexo3= {lat: 41.90651, lng: -87.6676};
+  var sexo4= { lat: 41.96069,lng: -87.6361};
+  var sexo5= {lat: 41.795,lng: -87.6975};
+  var sexo6= {lat: 41.78936,lng: -87.6912};
+  var sexo7= {lat: 41.8068, lng: -87.6641};
+  var sexo8= {lat: 41.96735,lng: -87.7133};
+  var sexo9= {lat: 41.93704,lng: -87.6631};
+  var sexo10= {lat: 41.94725,lng: -87.6535};
+  var sexo11= { lat: 41.83681,lng: -87.7309};
+  var sexo12= { lat: 41.84098,lng: -87.6494};
+  var sexo13= { lat: 41.78015,lng: -87.5847};
+  var sexo14= { lat: 41.80962,lng: -87.6456};
+  var sexo15= {lat: 41.78029, lng: -87.7204};
+  var sexo16= {lat: 41.85191,lng: -87.6946};
+  
+  var crim1= {lat: 41.88411, lng: -87.7708};
+ var crim2= {lat: 41.79602,lng: -87.6027};
+ var crim3= {lat: 41.87537,lng: -87.6206};
+ var crim4= { lat: 41.85199,lng: -87.6889};
+ var crim5= {lat: 41.96472, lng: -87.6548};
+ var crim6= { lat: 41.92275,lng: -87.645 };
+ var crim7= {lat: 41.87884,lng: -87.6396};
+ var crim8= { lat: 41.96342,lng: -87.7169};
+ var crim9= {lat: 41.87705,lng: -87.7701};
+ var crim10= {lat: 41.88589,lng: -87.6279 };
+ var crim11= { lat: 41.75612,lng: -87.6053};
+ var crim12= { lat: 41.75612,lng: -87.6053};
+ var crim13= {lat: 41.85734, lng: -87.652};
+ var crim14= {lat: 41.76833,lng: -87.6397};
+ var crim15= {lat: 41.89577,lng: -87.6218};
+ var crim16= { lat: 41.89548,lng: -87.7147};
+ var crim17= {lat: 41.80146,lng: -87.6543};
+ var crim18= {lat: 41.90591,lng: -87.7362};
+ var crim19= {lat: 41.90393,lng: -87.6293};
+ 
+var marker = new google.maps.Marker({
+                position:crim1, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim2, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim3, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim4, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim5, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim6, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim7, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim8, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim9, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim10, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim11, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim12, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim13, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim14, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim15, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim16, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim17, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim18, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:crim19, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+                
+            });
+  
+var marker = new google.maps.Marker({
+                position:sexo1, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo2, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo3, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo4, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo5, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo6, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo7, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo8, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo9, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo10, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo12, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo13, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo14, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo15, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:sexo16, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                
+            });
+ 
+ var marker = new google.maps.Marker({
+                position:kid1, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:kid2, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:kid3, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position:kid4, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                
+            });
+var marker = new google.maps.Marker({
+                position: kid5, 
+                map: map,
+                icon:'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                
+            });
+		var marker = new google.maps.Marker({
+    position: as1,
+    map: map,
+    title: 'Hello World!'
+  });
+		 var marker = new google.maps.Marker({
+    position: as2,
+    map: map,
+    title: 'Hello World!'
+  });
+  	var marker = new google.maps.Marker({
+    position: as3,
+    map: map,
+    title: 'Hello World!'
+  });
+		 var marker = new google.maps.Marker({
+    position: as4,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as5,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as6,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as7,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as8,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as9,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as10,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as11,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as12,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as13,
+    map: map,
+    title: 'Hello World!'
+  }); var marker = new google.maps.Marker({
+    position: as14,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as15,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as16,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as17,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as18,
+    map: map,
+    title: 'Hello World!'
+  }); var marker = new google.maps.Marker({
+    position: as19,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as20,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as21,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as22,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as23,
+    map: map,
+    title: 'Hello World!'
+  });
+     var marker = new google.maps.Marker({
+    position: as24,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as25,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as26,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as27,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as28,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as29,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as30,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as31,
+    map: map,
+    title: 'Hello World!'
+  }); var marker = new google.maps.Marker({
+    position: as32,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as33,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as34,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as35,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as36,
+    map: map,
+    title: 'Hello World!'
+  }); var marker = new google.maps.Marker({
+    position: as37,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as38,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as39,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as40,
+    map: map,
+    title: 'Hello World!'
+  });var marker = new google.maps.Marker({
+    position: as41,
+    map: map,
+    title: 'Hello World!'
+  });   var marker = new google.maps.Marker({
+    position: as42,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as43,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as44,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as45,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as46,
+    map: map,
+    title: 'Hello World!'
+  });
+  
+   var marker = new google.maps.Marker({
+    position: as47,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as48,
+    map: map,
+    title: 'Hello World!'
+  }); var marker = new google.maps.Marker({
+    position: as49,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as50,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as51,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as52,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as53,
+    map: map,
+    title: 'Hello World!'
+  }); var marker = new google.maps.Marker({
+    position: as54,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as55,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as56,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as57,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as58,
+    map: map,
+    title: 'Hello World!'
+  });
+  var marker = new google.maps.Marker({
+    position: as59,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as60,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as61,
+    map: map,
+    title: 'Hello World!'
+  });
+  var marker = new google.maps.Marker({
+    position: as62,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as63,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as64,
+    map: map,
+    title: 'Hello World!'
+  });
+  var marker = new google.maps.Marker({
+    position: as65,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as66,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as67,
+    map: map,
+    title: 'Hello World!'
+  });
+  var marker = new google.maps.Marker({
+    position: as68,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as69,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as70,
+    map: map,
+    title: 'Hello World!'
+  });
+  var marker = new google.maps.Marker({
+    position: as71,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as72,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as73,
+    map: map,
+    title: 'Hello World!'
+  });
+  var marker = new google.maps.Marker({
+    position: as74,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as75,
+    map: map,
+    title: 'Hello World!'
+  });
+  var marker = new google.maps.Marker({
+    position: as78,
+    map: map,
+    title: 'Hello World!'
+  });
+  var marker = new google.maps.Marker({
+    position: as79,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as80,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as81,
+    map: map,
+    title: 'Hello World!'
+  });
+  var marker = new google.maps.Marker({
+    position: as82,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as83,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as84,
+    map: map,
+    title: 'Hello World!'
+  });
+    var marker = new google.maps.Marker({
+    position: as85,
+    map: map,
+    title: 'Hello World!'
+  });
+  var marker = new google.maps.Marker({
+    position: as86,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as87,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as88,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as89,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as90,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as91,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as92,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as93,
+    map: map,
+    title: 'Hello World!'
+  });
+   var marker = new google.maps.Marker({
+    position: as94,
+    map: map,
+    title: 'Hello World!'
+  });
+     var marker = new google.maps.Marker({
+    position: as95,
+    map: map,
+    title: 'Hello World!'
+  });
+  
+
+      }
+	  
+	  
+	 
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCB13BDMHSvC4hXKeLyLfMljNtPE4v9B5Y&libraries=places&callback=initMap"
+        async defer></script>
+  </body>
+</html>
