@@ -51,8 +51,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="index.html">Map</a></li> <!--Home-->
-						<li><a href="aboutchi.html">About</a></li>
+						<li><a href="routes.html">Routing</a></li> 
+						<li><a href="info.html">Map</a></li> <!--Home-->
+						<li><a href="index.html">About</a></li>
 						<li><a href="safetyinfo.html">Safety Info</a></li> <!--Services-->
 						<li><a href="hoodcomments.html">Neighborhood Comments</a></li><!--Our Skills-->
 						<!--<li><a href="#gallery">Gallery</a></li>-->
@@ -97,7 +98,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<textarea class="form-control slideanim" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
 					<div class="row">
 						<div class="col-sm-12 form-group slideanim">
-							<button class="btn btn-outline1 btn-lg" type="submit">Send</button>
+							<input type="submit" class="btn btn-outline1 btn-lg" name="submit" value="Send" id="email_send">
+							<?php
+							$to = email_me;
+							$name = name;
+							$email = email;
+							$comments = comments;
+							
+							function sendEmail($_REQUEST['submit']) {
+								mail(chiroutes@gmail.com, "YOOOOO", $comments)
+							}
+							?>
 						</div>
 					</div>
 				</form>			
@@ -109,7 +120,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div>
 							<span class="glyphicon glyphicon-envelope slideanim"></span>
 							<p class="p1 slideanim">Email : <p>
-							<p class="p2 slideanim"><a href="chiroutes@gmail.com">chiroutes@gmail.com</a></p>
+							<p class="p2 slideanim"><a href="chiroutes@gmail.com" id="email_me" name="email_me">chiroutes@gmail.com</a></p>
 						</div>
 					</div>	
 				</div>
